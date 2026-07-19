@@ -52,3 +52,33 @@ allFormInputs.forEach(input => {
         }
     });
 });
+
+// REQUIREMENT'S 7,8,10,11,12
+
+window.setInterval(() => {
+    const now = new Date();
+    diveClockDisplay.textContent = now.toTimeString().split(' ')[0];
+}, 1000);
+
+
+siteSelect.addEventListener('change', function(e) {
+    const selectedValue = e.target.value;
+    siteContainer.innerHTML = ''; 
+    
+    if (!selectedValue || !diveSitesData[selectedValue]) return;
+    
+    const siteData = diveSitesData[selectedValue];
+    const template = document.getElementById('site-card-template');
+    const templateClone = template.content.cloneNode(true);
+    
+    templateClone.querySelector('.card-title').textContent = siteData.title;
+    templateClone.querySelector('.card-type').textContent = `Type: ${siteData.type}`;
+    templateClone.querySelector('.card-depth').textContent = siteData.depth;
+    templateClone.querySelector('.card-desc').textContent = siteData.desc;
+    
+    const cardImg = templateClone.querySelector('.card-img');
+    cardImg.setAttribute('src', siteData.img);
+    cardImg.setAttribute('alt', `Telemetry render of ${siteData.title}`);
+    
+    siteContainer.appendChild(templateClone);
+});
