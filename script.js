@@ -82,3 +82,39 @@ siteSelect.addEventListener('change', function(e) {
     
     siteContainer.appendChild(templateClone);
 });
+
+// REQUIREMENT 3,5,6,11,13 and 14 
+
+formElement.addEventListener('submit', function(e) {
+    e.preventDefault(); 
+    
+    let isFormValid = true;
+    const nameInput = document.getElementById('diver-name');
+    const depthInput = document.getElementById('dive-depth');
+    
+    if (nameInput.value.trim().length < 3) {
+        isFormValid = false;
+      
+        nameInput.nextElementSibling.textContent = "CRITICAL: Name details must exceed 2 characters.";
+        nameInput.parentNode.classList.add('has-error');
+    }
+    
+    if (!depthInput.value || Number(depthInput.value) <= 0) {
+        isFormValid = false;
+        depthInput.nextElementSibling.textContent = "CRITICAL: Depth calculation metrics must exceed 0 FT.";
+        depthInput.parentNode.classList.add('has-error');
+    }
+    
+    const feedbackBox = document.getElementById('form-feedback');
+    feedbackBox.innerHTML = ''; 
+    
+    if (isFormValid) {
+        const successBanner = document.createElement('div');
+        successBanner.classList.add('success-alert');
+        successBanner.textContent = `DATA INGESTION COMPLETE: Logged ${depthInput.value} FT profiles for Diver [${nameInput.value.toUpperCase()}].`;
+        
+        feedbackBox.appendChild(successBanner);
+        formElement.reset();
+    }
+});
+
