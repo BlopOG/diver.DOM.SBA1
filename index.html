@@ -1,0 +1,95 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scuba Duba Florida | Explore the Underwater World</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <div class="top-banner"> 
+        <a href="#home">
+            <img src="ocean.jpg" alt="Ocean Logo">
+        </a> 
+        <button id="theme-toggle" class="btn-toggle">Switch to Deep Water Mode</button>
+    </div>
+         
+    <header class="main-header">
+        <nav class="nav-links">
+            <a href="#logYourDive" class="nav-item"> Log your dive</a>
+        </nav>
+    </header>
+
+    <main class="content-container">
+     
+        <section id="home" class="info-column">
+            <h2>Beneath the Surface</h2>
+            <p>From high-flow karst cave penetrations to <em>deep-water trimix runs</em>, 
+                Florida is the technical playing ground</p> 
+                Plan your gas, execute your profile, and explore world-class visibility and history.</p>
+            <p>Don't just view the world from the surface. Dive in and experience the ultimate weightlessness.</p>
+            <img src="scuba-11.gif" alt="A scuba diver practicing tec diving techniques" class="promo-gif">
+        </section>
+
+        
+        <section id="explore" class="info-column">
+            <h1>Welcome to Florida Diving</h1>
+            <p>Florida offers some of the best dive sites that include freshwater, saltwater, and unique inland environments 
+                and even your grandma's back yard.</p>
+            
+            <h2>Select a Dive Site</h2>
+            <label for="dive-site-select">Choose a location to view:</label>
+            <select id="dive-site-select" name="dive-sites">
+                <option value="">-- Please choose an option --</option>
+                <option value="ginnie">Ginnie Springs</option>
+                <option value="grotto">Blue Grotto</option>
+                <option value="spiegel">Spiegel Grove</option>
+                <option value="buford">Buford Springs</option>
+            </select>
+
+            
+            <div id="dynamic-site-container"></div>
+        </section>
+
+      
+        <section id="log-dive" class="info-column">
+            <h2>Log Your Recent Dive</h2>
+            <form id="dive-log-form" novalidate>
+                <div class="form-group">
+                    <label for="diver-name">Diver Name:</label>
+                    <input type="text" id="diver-name" name="diverName" required minlength="3">
+                    <span class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dive-depth">Max Depth (feet):</label>
+                    <input type="number" id="dive-depth" name="diveDepth" required min="1" max="300">
+                    <span class="error-msg"></span>
+                </div>
+
+                <button type="submit" id="submit-btn">Save to Dive Matrix</button>
+            </form>
+            <div id="form-feedback"></div>
+        </section>
+        <script src="script.js"></script>
+    </main>
+
+  
+    <template id="site-card-template">
+        <div class="site-card">
+            <h3 class="card-title"></h3>
+            <p class="card-type"></p>
+            <p class="card-depth"></p>
+            <p class="card-desc"></p>
+            <img class="card-img" src="" alt="" style="max-width: 100%; height: auto; border-radius: 4px;">
+        </div>
+    </template>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Dive Hub Matrix // Latitude 27.9475° N</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
