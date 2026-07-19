@@ -21,7 +21,7 @@ const diveSitesData = {
         desc: "A massive 510-foot long vessel resting in Key Largo. A world-famous destination for advanced and wreck-certified divers.",
         img: "Speg.Grove.png"
     },
-    buford: {
+    bufford: {
         title: "Buford Springs",
         type: "Freshwater Sink / Cave",
         depth: "Max Depth: 150 ft",
@@ -115,6 +115,24 @@ formElement.addEventListener('submit', function(e) {
         
         feedbackBox.appendChild(successBanner);
         formElement.reset();
+    }
+});
+
+// REQUIREMENT 9,12 
+if (window.localStorage.getItem('deepWaterMode') === 'enabled') {
+    document.body.classList.add('deep-water-theme');
+    themeToggleBtn.textContent = "Switch to Surface Light Mode";
+}
+
+themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('deep-water-theme');
+    
+    if (document.body.classList.contains('deep-water-theme')) {
+        themeToggleBtn.textContent = "Switch to Surface Light Mode";
+        window.localStorage.setItem('deepWaterMode', 'enabled');
+    } else {
+        themeToggleBtn.textContent = "Switch to Deep Water Mode";
+        window.localStorage.setItem('deepWaterMode', 'disabled');
     }
 });
 
