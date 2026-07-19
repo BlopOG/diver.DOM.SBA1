@@ -178,7 +178,28 @@ input:focus, select:focus {
   border-color: var(--primary-glow);
   box-shadow: 0 0 8px rgba(0, 176, 255, 0.2);
 }
+.error-msg {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: block;
+    margin-top: 0.5rem;}
+    
+    .form-group.has-error input{
+    border-color: var(--accent-hazard, #ff5500) !important;
+    box-shadow: 0 0 10px rgba(255, 85, 0, 0.2);
+}
+.form-group.has-error .error-msg {
+    color: var(--accent-hazard, #ff5500);
+}
 
+.form-group.is-valid input {
+    border-color: var(--accent-nitrox, #00ff66) !important;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
+}
+.form-group.is-valid .error-msg {
+    color: var(--accent-nitrox, #00ff66);
+}
 
 button, input[type="submit"] {
   display: inline-block;
@@ -214,4 +235,18 @@ button:hover, input[type="submit"]:hover {
   max-width: 100%;    
   height: auto;       
   border-radius: 4px; 
+}
+body.deep-water-theme {
+    --bg-main: #020813;          
+    --bg-card: #051122;          
+    --border-color: #0b2240;     
+    --text-primary: #00e5ff;     
+    --text-muted: #4ba3e3;        
+    --bg-input: #030d1a;
+}
+.success-alert {
+    color: var(--accent-nitrox, #00ff66) !important;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    margin-top: 1rem;
 }

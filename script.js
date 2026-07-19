@@ -29,3 +29,26 @@ const diveSitesData = {
         img: "buf.png"
     }
 };
+// REQUIREMENT 1: Cache element using selectElementById
+
+const siteSelect = document.getElementById('dive-site-select');
+const formElement = document.getElementById('dive-log-form');
+const themeToggleBtn = document.getElementById('theme-toggle');
+const diveClockDisplay = document.getElementById('dive-clock');
+
+
+// REQUIREMENT 2: Cache elements using querySelector / querySelectorAll
+
+const siteContainer = document.querySelector('#dynamic-site-container');
+const allFormInputs = document.querySelectorAll('.form-group input');
+
+//REQUIREMENT 4: Iterate over a collection of elements to accomplish a task
+
+allFormInputs.forEach(input => {
+    input.addEventListener('input', function() {
+        if (this.parentNode.classList.contains('has-error')) {
+            this.parentNode.classList.remove('has-error');
+            this.nextElementSibling.textContent = '';
+        }
+    });
+});
