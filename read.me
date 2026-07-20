@@ -1,0 +1,33 @@
+What could you have done differently during the planning stages of your project to make the execution easier?
+
+Looking back on the planning phase, I definitely should have mapped out the HTML structure in closer coordination with my JavaScript DOM selectors from the start. For example,
+ I wrote the logic to query and update the runtime clock (#dive-clock), but completely forgot to include the actual container element in the HTML markup.
+ That created some unnecessary DOM manipulation bugs until I caught and fixed it. On the styling side, 
+ pre-defining my CSS variable overrides for theme switching (like Deep Water Mode) before writing the JS toggle logic would have made the CSS implementation a lot smoother.
+
+
+Were there any requirements that were difficult to implement? What do you think 
+would make them easier to implement in future projects?
+
+Honestly, setting up custom form validation with dynamic UI states was the trickiest part of the whole project. 
+Trying to manage error spans, toggle classes on the parent .form-group containers, and give real-time feedback while 
+blocking native form submissions meant I had to be super exact with my DOM traversal.
+Next time, I’m definitely defining all my state classes (like .has-error, .is-valid, and .success-alert)
+ in the CSS before writing the JS event listeners. It would’ve made debugging visual feedback way faster.
+
+
+
+
+What would you add to, or change about your application if given more time?
+
+If given more time, I would expand the site functionality by: adding more persisting dive logs, Interactive Site Metrics and expanding on on my theme UI more
+addining distinct themes for every dive site
+
+
+Use this space to make notes for your future self about anything that you think is important to remember about this process, 
+or that may aid you when attempting something similar again:
+Verify HTML IDs First, Style State Classes Early and Clear Event handling to make the UI a little bit smoother across the the whole website.
+
+
+
+
